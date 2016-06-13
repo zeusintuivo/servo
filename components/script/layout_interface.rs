@@ -33,7 +33,6 @@ pub use dom::characterdata::LayoutCharacterDataHelpers;
 pub use dom::document::{Document, LayoutDocumentHelpers};
 pub use dom::element::{Element, LayoutElementHelpers, RawLayoutElementHelpers};
 pub use dom::htmlobjectelement::is_image_data;
-pub use dom::node::{CAN_BE_FRAGMENTED, HAS_CHANGED, HAS_DIRTY_DESCENDANTS, IS_DIRTY};
 pub use dom::node::LayoutNodeHelpers;
 pub use dom::node::Node;
 pub use dom::node::OpaqueStyleAndLayoutData;

@@ -58,8 +58,7 @@ use dom::htmltablesectionelement::{HTMLTableSectionElement, HTMLTableSectionElem
 use dom::htmltemplateelement::HTMLTemplateElement;
 use dom::htmltextareaelement::{HTMLTextAreaElement, LayoutHTMLTextAreaElementHelpers};
 use dom::namednodemap::NamedNodeMap;
-use dom::node::{CLICK_IN_PROGRESS, ChildrenMutation, LayoutNodeHelpers, Node};
-use dom::node::{NodeDamage, SEQUENTIALLY_FOCUSABLE, UnbindContext};
+use dom::node::{ChildrenMutation, LayoutNodeHelpers, Node, NodeDamage, UnbindContext};
 use dom::node::{document_from_node, window_from_node};
 use dom::nodelist::NodeList;
 use dom::text::Text;
@@ -71,6 +70,7 @@ use html5ever::serialize::TraversalScope;
 use html5ever::serialize::TraversalScope::{ChildrenOnly, IncludeNode};
 use html5ever::tree_builder::{LimitedQuirks, NoQuirks, Quirks};
 use ref_filter_map::ref_filter_map;
+use script_layout_interface::{CLICK_IN_PROGRESS, SEQUENTIALLY_FOCUSABLE};
 use selectors::matching::{DeclarationBlock, ElementFlags, matches};
 use selectors::matching::{HAS_SLOW_SELECTOR, HAS_EDGE_CHILD_SELECTOR, HAS_SLOW_SELECTOR_LATER_SIBLINGS};
 use selectors::matching::{common_style_affecting_attributes, rare_style_affecting_attributes};

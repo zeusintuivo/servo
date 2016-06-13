@@ -11,6 +11,9 @@
 #![deny(unsafe_code)]
 
 extern crate app_units;
+#[allow(unused_extern_crates)]
+#[macro_use]
+extern crate bitflags;
 extern crate canvas_traits;
 extern crate devtools_traits;
 extern crate euclid;
@@ -46,8 +49,44 @@ use std::sync::mpsc::{Sender, Receiver};
 use url::Url;
 use util::ipc::OptionalOpaqueIpcSender;
 
+bitflags! {
+    #[doc = "Flags for node items."]
+    #[derive(HeapSizeOf)]
+    pub flags NodeFlags: u8 {
+        #[doc = "Specifies whether this node is in a document."]
+        const IS_IN_DOC = 0x01,
+        #[doc = "Specifies whether this node _must_ be reflowed regardless of style differences."]
+        const HAS_CHANGED = 0x02,
+        #[doc = "Specifies whether this node needs style recalc on next reflow."]
+        const IS_DIRTY = 0x04,
+        #[doc = "Specifies whether this node has descendants (inclusive of itself) which \
+                 have changed since the last reflow."]
+        const HAS_DIRTY_DESCENDANTS = 0x08,
+        // TODO: find a better place to keep this (#4105)
+        // https://critic.hoppipolla.co.uk/showcomment?chain=8873
+        // Perhaps using a Set in Document?
+        #[doc = "Specifies whether or not there is an authentic click in progress on \
+                 this element."]
+        const CLICK_IN_PROGRESS = 0x10,
+        #[doc = "Specifies whether this node is focusable and whether it is supposed \
+                 to be reachable with using sequential focus navigation."]
+        const SEQUENTIALLY_FOCUSABLE = 0x20,
+
+        /// Whether any ancestor is a fragmentation container
+        const CAN_BE_FRAGMENTED = 0x40
+    }
+}
+
+impl NodeFlags {
+    pub fn new() -> NodeFlags {
+        HAS_CHANGED | IS_DIRTY | HAS_DIRTY_DESCENDANTS
+    }
+}
+
 pub struct HTMLCanvasData {
     pub ipc_renderer: Option<IpcSender<CanvasMsg>>,
     pub width: u32,
     pub height: u32,
 }
+
+

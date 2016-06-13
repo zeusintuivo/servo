@@ -40,7 +40,7 @@ use msg::constellation_msg::PipelineId;
 use opaque_node::OpaqueNodeMethods;
 use range::Range;
 use script_layout_interface::HTMLCanvasData;
-use script::layout_interface::{CAN_BE_FRAGMENTED, HAS_CHANGED, HAS_DIRTY_DESCENDANTS, IS_DIRTY};
+use script_layout_interface::{CAN_BE_FRAGMENTED, HAS_CHANGED, HAS_DIRTY_DESCENDANTS, IS_DIRTY};
 use script::layout_interface::{CharacterDataTypeId, Document, Element, ElementTypeId};
 use script::layout_interface::{HTMLElementTypeId, LayoutCharacterDataHelpers};
 use script::layout_interface::{LayoutDocumentHelpers, LayoutElementHelpers, LayoutJS};

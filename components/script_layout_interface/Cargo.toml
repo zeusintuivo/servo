@@ -9,6 +9,7 @@ name = "script_layout_interface"
 path = "lib.rs"
 
 [dependencies]
+bitflags = "0.7"
 canvas_traits = {path = "../canvas_traits"}
 gfx_traits = {path = "../gfx_traits"}
 msg = {path = "../msg"}
