@@ -14,7 +14,7 @@ canvas_traits = {path = "../canvas_traits"}
 clipboard = {git = "https://github.com/aweinstock314/rust-clipboard"}
 compositing = {path = "../compositing"}
 devtools_traits = {path = "../devtools_traits"}
-euclid = {version = "0.6.4", features = ["plugins"]}
+euclid = {version = "0.7.0", features = ["plugins"]}
 gfx = {path = "../gfx"}
 gfx_traits = {path = "../gfx_traits"}
 ipc-channel = {git = "https://github.com/servo/ipc-channel"}

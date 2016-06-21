@@ -13,7 +13,7 @@ app_units = {version = "0.2.3", features = ["plugins"]}
 backtrace = "0.2.1"
 bitflags = "0.7"
 deque = "0.3.1"
-euclid = {version = "0.6.4", features = ["unstable", "plugins"]}
+euclid = {version = "0.7.0", features = ["unstable", "plugins"]}
 getopts = "0.2.11"
 heapsize = "0.3.0"
 heapsize_plugin = "0.1.2"

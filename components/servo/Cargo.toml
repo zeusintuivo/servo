@@ -69,7 +69,7 @@ gleam = "0.2"
 browserhtml = {git = "https://github.com/browserhtml/browserhtml", branch = "gh-pages"}
 log = "0.3"
 env_logger = "0.3"
-euclid = "0.6.4"
+euclid = "0.7.0"
 libc = "0.2"
 url = "1.0.0"
 
